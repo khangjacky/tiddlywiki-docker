@@ -3,10 +3,17 @@ version: "3.3"
 services:
   tiddlywiki:
     build:
-      context: ./
+      context: ./tiddlyServer
     container_name: tiddlywiki
     restart: always
     ports:
       - 8080:8080
     volumes:
       - ../app:/app
+  nginx:
+    build:
+      context: ./nginx
+    container_name: nginx
+    restart: always
+    ports:
+      - 80:80
