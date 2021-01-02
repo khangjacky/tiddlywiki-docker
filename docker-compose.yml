@@ -3,7 +3,7 @@ version: "3.3"
 services:
   tiddlywiki:
     build:
-      context: ./tiddlyServer
+      context: ./tiddlywiki
     container_name: tiddlywiki
     restart: always
     ports:
