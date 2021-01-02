@@ -1,6 +1,14 @@
 FROM node:alpine
 
-RUN npm install -g tiddlywiki
+ARG TW_VERSION
+ARG TW_USERNAME
+ARG TW_PASSWORD
+
+ENV TW_VERSION="${TW_VERSION}" \
+    TW_USERNAME="${TW_USERNAME}" \
+    TW_PASSWORD="${TW_PASSWORD}"
+
+RUN npm install -g "tiddlywiki@${TW_VERSION}"
 
 EXPOSE 8080
 

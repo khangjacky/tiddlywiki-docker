@@ -4,6 +4,10 @@ services:
   tiddlywiki:
     build:
       context: ./tiddlywiki
+      args:
+        TW_VERSION: ${TW_VERSION}
+        TW_USERNAME: ${TW_USERNAME}
+        TW_PASSWORD: ${TW_PASSWORD}
     container_name: tiddlywiki
     restart: always
     ports:
