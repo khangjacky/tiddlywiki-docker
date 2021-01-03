@@ -26,5 +26,5 @@ services:
       ENVSUBST_VARS: FQDN
       FQDN: ${FQDN}
     volumes:
-      - ./conf.d:/etc/nginx/user.conf.d:ro
-      - letsencrypt:/etc/letsencrypt
+      - ./nginx/conf.d:/etc/nginx/user.conf.d:ro
+      - ./letsencrypt:/etc/letsencrypt
