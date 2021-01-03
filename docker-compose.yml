@@ -15,9 +15,16 @@ services:
     volumes:
       - ../app:/app
   nginx:
-    build:
-      context: ./nginx
-    container_name: nginx
-    restart: always
+    restart: unless-stopped
+    image: staticfloat/nginx-certbot
     ports:
-      - 80:80
+      - 80:80/tcp
+      - 443:443/tcp
+    environment:
+      CERTBOT_EMAIL: ${CERTBOT_EMAIL}
+      # variable names are space-separated
+      ENVSUBST_VARS: FQDN
+      FQDN: ${CERTBOT_EMAIL}
+    volumes:
+      - ./conf.d:/etc/nginx/user.conf.d:ro
+      - letsencrypt:/etc/letsencrypt
