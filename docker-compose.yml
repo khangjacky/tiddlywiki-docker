@@ -24,7 +24,7 @@ services:
       CERTBOT_EMAIL: ${CERTBOT_EMAIL}
       # variable names are space-separated
       ENVSUBST_VARS: FQDN
-      FQDN: ${CERTBOT_EMAIL}
+      FQDN: ${FQDN}
     volumes:
       - ./conf.d:/etc/nginx/user.conf.d:ro
       - letsencrypt:/etc/letsencrypt
