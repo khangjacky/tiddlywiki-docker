@@ -1,4 +1,4 @@
-Private [Tiddlywiki 5.1.23](https://tiddlywiki.com/) server with basic authentication via [docker-nginx-certbot](https://hub.docker.com/r/staticfloat/nginx-certbot/)
+Private [Tiddlywiki 5.1.23](https://tiddlywiki.com/) server with basic authentication via [staticfloat/nginx-certbot](https://hub.docker.com/r/staticfloat/nginx-certbot/)
 
 ## Prerequisites
 
